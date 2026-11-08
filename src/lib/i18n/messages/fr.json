@@ -1,12 +1,16 @@
 {
   "app": {
     "name": "Plateforme Vote",
-    "tagline": "Votes electroniques securises pour votre organisation"
+    "tagline": "Votes électroniques sécurisés pour votre organisation",
+    "sandbox": "SANDBOX — NON_PRODUCTION",
+    "sandboxDetail": "Environnement de démonstration. Aucune donnée électorale réelle.",
+    "designLink": "Système de conception",
+    "localClock": "Heure d’affichage ({timeZone}) : {value}"
   },
   "nav": {
     "home": "Accueil",
     "login": "Connexion",
-    "logout": "Deconnexion",
+    "logout": "Déconnexion",
     "dashboard": "Tableau de bord"
   },
   "common": {
@@ -15,10 +19,93 @@
     "save": "Enregistrer",
     "cancel": "Annuler",
     "confirm": "Confirmer",
-    "back": "Retour"
+    "back": "Retour",
+    "skipToContent": "Aller au contenu"
   },
   "config": {
     "missing": "Configuration Supabase manquante",
     "instructions": "Copier .env.example en .env.local et renseigner les variables Supabase."
+  },
+  "design": {
+    "title": "Système de conception",
+    "intro": "Composants de base, tokens et états. La palette de travail reste exploratoire : elle est vérifiée en contraste, pas certifiée.",
+    "language": "English",
+    "sections": {
+      "type": "Typographie",
+      "formats": "Dates et nombres",
+      "color": "Couleurs",
+      "buttons": "Boutons",
+      "fields": "Champs",
+      "alerts": "Alertes",
+      "badges": "Badges",
+      "dialog": "Dialogue",
+      "table": "Tableau",
+      "nav": "Navigation"
+    },
+    "typeSample": "Hiérarchie calme : un titre, un texte, une précision.",
+    "typeMuted": "Texte secondaire, toujours lisible sur le fond.",
+    "formats": {
+      "intro": "Exemple synthétique, fuseau {timeZone}. Ces valeurs ne décrivent aucun scrutin.",
+      "date": "Date",
+      "time": "Heure",
+      "dateTime": "Date et heure",
+      "number": "Nombre",
+      "percent": "Pourcentage"
+    },
+    "swatches": {
+      "night": "Bleu nuit — texte et surfaces sombres",
+      "teal": "Vert pétrole — action principale",
+      "accent": "Accent chaud — décoratif. Pas de texte sur fond clair.",
+      "surface": "Fond de page",
+      "divider": "Séparateur décoratif, insuffisant seul pour un champ",
+      "control": "Bordure de contrôle, contraste non textuel"
+    },
+    "accentOnNight": "Accent lisible uniquement sur le bleu nuit",
+    "buttonsHint": "Cible tactile d’au moins 44 px. Le focus clavier est visible.",
+    "disabled": "Indisponible",
+    "fields": {
+      "name": "Nom de démonstration",
+      "nameHint": "Exemple synthétique, sans donnée réelle.",
+      "reference": "Référence",
+      "referenceError": "Ce champ est obligatoire."
+    },
+    "alerts": {
+      "infoTitle": "Information",
+      "infoBody": "Message neutre, sans caractère d’urgence.",
+      "warningTitle": "À vérifier",
+      "warningBody": "Ce point demande attention, sans bloquer l’action.",
+      "successTitle": "Enregistré",
+      "successBody": "L’action de démonstration est terminée.",
+      "dangerTitle": "Action impossible",
+      "dangerBody": "Le détail reste compréhensible, sans donnée interne."
+    },
+    "badges": {
+      "neutral": "Brouillon",
+      "info": "En revue",
+      "success": "Ouvert",
+      "warning": "Suspendu",
+      "danger": "Clos"
+    },
+    "dialog": {
+      "open": "Ouvrir le dialogue",
+      "title": "Confirmer l’action",
+      "description": "Aucune donnée n’est envoyée. Échap ferme aussi cette fenêtre.",
+      "close": "Fermer"
+    },
+    "table": {
+      "caption": "États d’interface",
+      "emptyCaption": "Liste vide",
+      "empty": "Aucune ligne à afficher.",
+      "columns": {
+        "state": "État",
+        "usage": "Usage"
+      },
+      "rows": {
+        "loading": { "state": "Chargement", "usage": "Action en cours" },
+        "empty": { "state": "Vide", "usage": "Aucun élément" },
+        "error": { "state": "Erreur", "usage": "Échec récupérable" }
+      }
+    },
+    "navLabel": "Sections de la page"
   }
 }

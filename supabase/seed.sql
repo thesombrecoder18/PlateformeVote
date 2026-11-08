@@ -1,0 +1,2 @@
+-- Aucune donnee electorale.
+-- Le marqueur sandbox est insere par la migration platform_settings.

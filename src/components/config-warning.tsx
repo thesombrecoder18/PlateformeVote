@@ -1,12 +1,11 @@
-"use client"
-import { useTranslations } from "next-intl"
+import { getTranslations } from "next-intl/server"
+import { Alert } from "@/components/ui/alert"
 
-export function ConfigWarning() {
-  const t = useTranslations("config")
+export async function ConfigWarning() {
+  const t = await getTranslations("config")
   return (
-    <div role="alert" className="border border-red-300 bg-red-50 p-4 text-sm text-red-800">
-      <strong>{t("missing")}</strong>
-      <p className="mt-1">{t("instructions")}</p>
-    </div>
+    <Alert variant="danger" title={t("missing")}>
+      {t("instructions")}
+    </Alert>
   )
 }

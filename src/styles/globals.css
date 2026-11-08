@@ -5,7 +5,45 @@
 :root {
   --color-brand-night: #14283F;
   --color-brand-teal: #176B66;
+  --color-brand-teal-hover: #115650;
   --color-accent: #D49A43;
   --color-surface-base: #F5F7F8;
   --color-surface-border: #DCE4EA;
+  --color-ink-muted: #3E5166;
+  --color-control-border: #6E8498;
+  --color-status-danger: #8E1B1B;
+  --color-status-success: #0E5C42;
+  --color-status-warning: #6A4508;
+  --color-focus: #0C4A46;
+}
+
+body {
+  background: var(--color-surface-base);
+  color: var(--color-brand-night);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+dialog:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+#content:focus {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

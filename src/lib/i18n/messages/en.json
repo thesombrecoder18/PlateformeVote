@@ -1,7 +1,11 @@
 {
   "app": {
     "name": "Vote Platform",
-    "tagline": "Secure electronic voting for your organization"
+    "tagline": "Secure electronic voting for your organization",
+    "sandbox": "SANDBOX — NON_PRODUCTION",
+    "sandboxDetail": "Demonstration environment. No real electoral data.",
+    "designLink": "Design system",
+    "localClock": "Display time ({timeZone}): {value}"
   },
   "nav": {
     "home": "Home",
@@ -15,10 +19,93 @@
     "save": "Save",
     "cancel": "Cancel",
     "confirm": "Confirm",
-    "back": "Back"
+    "back": "Back",
+    "skipToContent": "Skip to content"
   },
   "config": {
     "missing": "Supabase configuration missing",
     "instructions": "Copy .env.example to .env.local and fill in Supabase variables."
+  },
+  "design": {
+    "title": "Design system",
+    "intro": "Base components, tokens and states. The working palette stays exploratory: contrast-checked, not certified.",
+    "language": "Français",
+    "sections": {
+      "type": "Typography",
+      "formats": "Dates and numbers",
+      "color": "Colors",
+      "buttons": "Buttons",
+      "fields": "Fields",
+      "alerts": "Alerts",
+      "badges": "Badges",
+      "dialog": "Dialog",
+      "table": "Table",
+      "nav": "Navigation"
+    },
+    "typeSample": "A calm hierarchy: one title, body copy, and a note.",
+    "typeMuted": "Secondary text, still readable on the page background.",
+    "formats": {
+      "intro": "Synthetic example, time zone {timeZone}. These values do not describe an election.",
+      "date": "Date",
+      "time": "Time",
+      "dateTime": "Date and time",
+      "number": "Number",
+      "percent": "Percentage"
+    },
+    "swatches": {
+      "night": "Night blue — text and dark surfaces",
+      "teal": "Teal — primary action",
+      "accent": "Warm accent — decorative. Not for text on a light background.",
+      "surface": "Page background",
+      "divider": "Decorative divider, not enough on its own for a field",
+      "control": "Control border, non-text contrast"
+    },
+    "accentOnNight": "Accent is readable only on night blue",
+    "buttonsHint": "Touch target of at least 44 px. Keyboard focus is visible.",
+    "disabled": "Unavailable",
+    "fields": {
+      "name": "Demonstration name",
+      "nameHint": "Synthetic example, with no real data.",
+      "reference": "Reference",
+      "referenceError": "This field is required."
+    },
+    "alerts": {
+      "infoTitle": "Information",
+      "infoBody": "Neutral message, without urgency.",
+      "warningTitle": "Needs attention",
+      "warningBody": "This point needs attention, without blocking the action.",
+      "successTitle": "Saved",
+      "successBody": "The demonstration action is complete.",
+      "dangerTitle": "Action unavailable",
+      "dangerBody": "The detail stays understandable, with no internal data."
+    },
+    "badges": {
+      "neutral": "Draft",
+      "info": "In review",
+      "success": "Open",
+      "warning": "Suspended",
+      "danger": "Closed"
+    },
+    "dialog": {
+      "open": "Open dialog",
+      "title": "Confirm the action",
+      "description": "Nothing is submitted. Escape also closes this window.",
+      "close": "Close"
+    },
+    "table": {
+      "caption": "Interface states",
+      "emptyCaption": "Empty list",
+      "empty": "No rows to show.",
+      "columns": {
+        "state": "State",
+        "usage": "Use"
+      },
+      "rows": {
+        "loading": { "state": "Loading", "usage": "Action in progress" },
+        "empty": { "state": "Empty", "usage": "No items" },
+        "error": { "state": "Error", "usage": "Recoverable failure" }
+      }
+    },
+    "navLabel": "Page sections"
   }
 }

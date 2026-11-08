@@ -7,11 +7,11 @@ Chaque sprint depend des precedents. Les sujets de securite electorale peuvent n
 
 | Sprint | Titre | Statut | Depend de |
 |--------|-------|--------|-----------|
-| S00 | Audit depot et documentation | IN PROGRESS | - |
-| S01 | Bootstrap Next.js | NOT STARTED | S00 |
-| S02 | Design system initial | NOT STARTED | S01 |
-| S03 | Internationalisation FR/EN | NOT STARTED | S01 |
-| S04 | Architecture Supabase et migrations | NOT STARTED | S01 |
+| S00 | Audit depot et documentation | DONE | - |
+| S01 | Bootstrap Next.js | DONE | S00 |
+| S02 | Design system initial | DONE | S01 |
+| S03 | Internationalisation FR/EN | DONE | S01 |
+| S04 | Architecture Supabase et migrations | IN PROGRESS | S01 |
 
 ## Phase B - Identite, tenant, controle d acces (S05-S10)
 

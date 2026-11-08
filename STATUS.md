@@ -1,8 +1,8 @@
 # Project Status
-Updated: 2026-11-03
+Updated: 2026-11-08
 Repo: https://github.com/thesombrecoder18/PlateformeVote
 Current phase: Phase A - Fondations
-Current sprint: S02 - Design system initial
+Current sprint: S04 - Architecture Supabase et migrations
 Overall status: active
 
 ## Stack technique
@@ -11,36 +11,41 @@ Overall status: active
 - Supabase (PostgreSQL, Auth, Storage) - projet: eqwqrwvtzkspednlruys
 - next-intl FR/EN - routing [locale]
 - pnpm 12.16.1
-- Vitest + Playwright (configures, pas encore de vrais tests)
+- Vitest + Playwright (Playwright encore sur un exemple)
 
 ## Arborescence cle
 src/
-  app/[locale]/          # layout.tsx + page.tsx (page accueil sandbox)
-  components/            # config-warning.tsx
-  i18n/request.ts        # config next-intl
+  app/[locale]/          # accueil + /design
+  components/ui/         # boutons, champs, alertes, badges, dialogue, tableau, nav
+  components/            # sandbox-banner, config-warning
+  i18n/request.ts        # config next-intl, fuseau Africa/Dakar
   lib/
-    supabase/            # client.ts + server.ts (adaptateurs SSR)
+    design/              # tokens + contraste
+    supabase/            # client.ts + server.ts
     i18n/
       routing.ts         # locales: [fr, en]
+      format.ts          # dates, heures, nombres, pourcentages
       messages/          # fr.json + en.json
   middleware.ts          # auth Supabase + i18n
   styles/globals.css
   types/                 # database.ts (placeholder) + index.ts
 
 ## Verified complete
-- S00 : Documentation gouvernance (107 fichiers)
-  - AGENTS.md, 7 ADR, 34 sprints, 14 features docs, 12 prompts AI
-  - docs/security/, docs/compliance/, docs/data-model/, docs/operations/
-- S01 : Bootstrap Next.js
-  - build OK, typecheck OK, lint OK
-  - Supabase adapters SSR operationnels
-  - next-intl FR/EN fonctionnel (/fr et /en)
-  - Banniere SANDBOX NON_PRODUCTION visible
-  - Fix: static message loaders (bug undefined locale corrige)
-  - Fix: compatibilite ANON_KEY / PUBLISHABLE_KEY
+- S00 : Documentation gouvernance
+- S01 : Bootstrap Next.js, adaptateurs Supabase SSR, next-intl FR/EN, banniere sandbox
+- S02 : Design system initial
+  - Tokens et contraste verifies
+  - Composants de base et page /fr/design, /en/design
+  - Focus, lien d evitement, cibles 44 px, mouvement reduit
+  - Palette de travail encore exploratoire (cahier 22.1), pas une identite figee
+- S03 : Internationalisation FR/EN
+  - Routage [locale] et dictionnaires deja poses en S01
+  - Dates, heures, nombres et pourcentages selon la locale
+  - Fuseau d affichage Africa/Dakar, en attendant une preference d organisation
 
 ## In progress
-- S02 : Design system initial (a demarrer)
+- S04 : Architecture Supabase et migrations
+  - Criteres encore a definir avant implementation
 
 ## Blocked / waiting
 - SESSION_SECRET dans .env.local (requis au S07)
@@ -54,12 +59,10 @@ src/
 - Conformite CDP Senegal a examiner avant traitement reel
 
 ## Last verification
-- git log: 8f5eae0 fix(i18n): use static message loaders map with locale fallback
-- pnpm typecheck: OK (zero erreur)
-- pnpm lint: OK
-- pnpm build: OK (3 pages statiques generees)
-- pnpm dev: OK - /fr et /en servent correctement
+- git HEAD : f898552 docs(session): update reprise files for any agent handoff
+- S02 et S03 sont dans le working tree, pas encore commites
+- Verification de cette session : voir NEXT_SESSION.md apres les commandes
 
 ## Next action
-Demarrer S02 - Design system initial
-Lire: AGENTS.md + NEXT_SESSION.md + docs/roadmap/sprints/SPRINT-02.md
+Demarrer S04 - definir les criteres, puis connexion, types et premiere migration
+Lire : AGENTS.md + NEXT_SESSION.md + docs/roadmap/sprints/SPRINT-04.md + docs/architecture/adr/0002-supabase-postgres.md

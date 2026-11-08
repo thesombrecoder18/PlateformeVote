@@ -40,3 +40,11 @@ Utiliser Supabase (PostgreSQL, Auth, Storage).
 - SERVICE_ROLE_KEY cote serveur uniquement
 - Migrations SQL versionnees, pas de modifications manuelles
 - Tests RLS obligatoires
+
+## Mise en oeuvre S04
+
+- Client navigateur : `src/lib/supabase/client.ts` (cle anon)
+- Client session : `src/lib/supabase/server.ts` (cle anon, cookies)
+- Client admin : `src/lib/supabase/admin.ts` (cle service role, import `server-only`)
+- Premiere table : `public.platform_settings`, plateforme globale, RLS forcee
+- Conventions : `docs/data-model/SQL_CONVENTIONS.md`

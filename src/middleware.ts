@@ -3,26 +3,44 @@ import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 import createMiddleware from "next-intl/middleware"
 import { routing } from "@/lib/i18n/routing"
+import { readPublicSupabaseEnv } from "@/lib/supabase/env"
+import type { Database } from "@/types/database"
 
 const handleI18n = createMiddleware(routing)
 
 export async function middleware(request: NextRequest) {
-  let response = NextResponse.next({ request })
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
+  const { url, anonKey, configured } = readPublicSupabaseEnv()
+  const pendingCookies: Array<{
+    name: string
+    value: string
+    options?: Parameters<NextResponse["cookies"]["set"]>[2]
+  }> = []
+
+  if (configured) {
+    const supabase = createServerClient<Database>(url, anonKey, {
       cookies: {
-        getAll() { return request.cookies.getAll() },
-        setAll(c) {
-          c.forEach(({ name, value, options }) =>
-            response.cookies.set(name, value, options))
+        getAll() {
+          return request.cookies.getAll()
+        },
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value))
+          pendingCookies.splice(0, pendingCookies.length, ...cookiesToSet)
         },
       },
-    },
-  )
-  await supabase.auth.getUser()
-  return handleI18n(request)
+    })
+
+    try {
+      await supabase.auth.getUser()
+    } catch {
+      // La page publique reste servie. Le detail reseau n est pas renvoye au navigateur.
+    }
+  }
+
+  const response = handleI18n(request)
+  pendingCookies.forEach(({ name, value, options }) => {
+    response.cookies.set(name, value, options)
+  })
+  return response
 }
 
 export const config = {

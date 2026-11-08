@@ -1,5 +1,6 @@
 import { getRequestConfig } from "next-intl/server"
 import type { AbstractIntlMessages } from "next-intl"
+import { DISPLAY_TIME_ZONE } from "@/lib/i18n/format"
 import { routing } from "@/lib/i18n/routing"
 
 const messageLoaders = {
@@ -18,5 +19,6 @@ export default getRequestConfig(async ({ requestLocale }) => {
   return {
     locale,
     messages: mod.default as AbstractIntlMessages,
+    timeZone: DISPLAY_TIME_ZONE,
   }
 })

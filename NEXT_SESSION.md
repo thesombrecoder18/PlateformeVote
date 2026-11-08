@@ -1,32 +1,32 @@
 # NEXT_SESSION.md - Reprise pour n importe quel agent IA
 
 ## Prochaine action
-Sprint S02 - Design system initial
+Sprint S04 - Architecture Supabase et migrations
+
+S03 est termine : dates, heures, nombres et pourcentages suivent la locale.
+Ne pas refaire le routage ni les dictionnaires.
+Definir les criteres dans docs/roadmap/sprints/SPRINT-04.md avant d etendre le perimetre.
 
 ## Lire dans cet ordre
-1. AGENTS.md         <- regles, securite, commandes
-2. STATUS.md                          <- etat reel du code
-3. docs/roadmap/sprints/SPRINT-02.md      <- objectif sprint
-4. docs/features/voter-experience/README.md  <- priorite UX
+1. AGENTS.md
+2. STATUS.md
+3. docs/roadmap/sprints/SPRINT-04.md
+4. docs/architecture/adr/0002-supabase-postgres.md
 
 ## Repo et etat
 - GitHub : https://github.com/thesombrecoder18/PlateformeVote
 - Branch : main
-- Commit : 8f5eae0 fix(i18n): use static message loaders map
-- pnpm dev : fonctionne sur /fr et /en sans erreur
+- Dernier commit : f898552 docs(session): update reprise files for any agent handoff
+- S02 et S03 sont implementes dans le working tree et ne sont pas encore commites
+- pnpm dev : /fr, /en, /fr/design, /en/design
 
-## Fichiers source existants
-src/app/[locale]/layout.tsx       layout Next.js + NextIntlClientProvider
-src/app/[locale]/page.tsx         page accueil + banniere SANDBOX
-src/components/config-warning.tsx composant alerte config manquante
-src/lib/supabase/client.ts        createClient() pour Client Components
-src/lib/supabase/server.ts        createServerSupabaseClient()
-src/middleware.ts                  refresh session Supabase + routing i18n
-src/i18n/request.ts                config next-intl loaders statiques FR/EN
-src/lib/i18n/messages/fr.json     messages FR
-src/lib/i18n/messages/en.json     messages EN
-src/styles/globals.css            Tailwind + tokens CSS
-tailwind.config.ts                tokens: brand.night, brand.teal, brand.accent
+## Fichiers source utiles
+src/lib/i18n/format.ts            dates, heures, nombres, pourcentages
+src/lib/i18n/routing.ts           locales fr, en
+src/i18n/request.ts               messages + fuseau Africa/Dakar
+src/lib/supabase/client.ts        client navigateur
+src/lib/supabase/server.ts        client serveur
+src/types/database.ts             placeholder, a remplacer par les types generes
 
 ## Variables .env.local (ne pas committer)
 NEXT_PUBLIC_SUPABASE_URL         rempli
@@ -40,22 +40,21 @@ SESSION_SECRET                   vide - requis au S07
   pnpm install       si node_modules absent
   pnpm typecheck     doit passer zero erreur
   pnpm lint          doit passer zero erreur
+  pnpm test          doit passer
   pnpm build         doit passer
 
-## Objectif S02
-Creer src/components/ui/ :
-- button.tsx   composant Button accessible
-- input.tsx    composant Input accessible
-- label.tsx    composant Label
-- alert.tsx    composant Alert
-- badge.tsx    composant Badge
-Page demo : src/app/[locale]/design/page.tsx
-Accessibilite WCAG 2.2 AA, FR/EN, build+lint+typecheck OK
+## Objectif S04
+- Definir les criteres dans SPRINT-04.md avant implementation
+- Connexion Supabase, types generes, premiere migration, tests RLS
+- RLS activee sur toute table exposee
+- SERVICE_ROLE_KEY cote serveur uniquement
+- Aucune donnee electorale reelle
 
 ## Conventions
 - Server Components par defaut, use client si interaction
 - Imports via @/ (src/)
 - Pas de any TypeScript sans justification
-- Commits : feat(design-system): description
+- Commits : feat(db): description
 - Aucune mention outil IA dans les commits
 - Sandbox NON_PRODUCTION : pas de donnees reelles
+- Ne pas pousser sur remote sans instruction explicite

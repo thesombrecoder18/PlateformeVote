@@ -1,5 +1,14 @@
 # DATA_DICTIONARY.md
 
+## Table plateforme globale
+
+platform_settings (sans tenant_id)
+- key : texte, cle primaire, format `^[a-z][a-z0-9_]{1,63}$`
+- value : jsonb, jamais un secret ni une donnee electorale
+- updated_at : timestamptz, maintenu par `touch_updated_at()`
+- Acces : RLS forcee, aucun privilege pour anon et authenticated, grant au role service_role
+- Marqueur synthetique : runtime_mode = sandbox_non_production
+
 ## Champs communs a toutes les tables metier
 
 tenant_id : UUID NOT NULL - identifiant de l organisation

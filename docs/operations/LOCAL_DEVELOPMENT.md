@@ -36,4 +36,7 @@ Voir src/middleware.ts pour la configuration.
   pnpm typecheck
   pnpm test
   pnpm test:e2e
+  supabase start
+  supabase db reset
+  supabase test db
   supabase gen types typescript --local > src/types/database.ts

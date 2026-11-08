@@ -1,6 +1,6 @@
 # S01 - Bootstrap Next.js et outillage
 ## Phase: A
-## Statut: NOT STARTED
+## Statut: DONE
 ## Dependances: S00
 
 ## Objectif
