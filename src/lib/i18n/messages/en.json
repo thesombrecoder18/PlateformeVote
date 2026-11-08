@@ -1,0 +1,24 @@
+{
+  "app": {
+    "name": "Vote Platform",
+    "tagline": "Secure electronic voting for your organization"
+  },
+  "nav": {
+    "home": "Home",
+    "login": "Sign in",
+    "logout": "Sign out",
+    "dashboard": "Dashboard"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "back": "Back"
+  },
+  "config": {
+    "missing": "Supabase configuration missing",
+    "instructions": "Copy .env.example to .env.local and fill in Supabase variables."
+  }
+}

@@ -1,0 +1,19 @@
+# type(scope): resume imperatif (50 chars max)
+#
+# Types : feat fix refactor perf test docs build ci chore security revert
+# Scopes : auth tenants elections voting results members audit platform
+#
+# Corps optionnel (expliquer le POURQUOI, pas le COMMENT)
+#
+# Footer optionnel : BREAKING CHANGE: ...
+#
+# Exemples :
+#   feat(auth): add invitation-based account activation
+#   fix(tenants): enforce organization scope on member queries
+#   security(db): add tenant isolation policies
+#   test(voting): cover duplicate submission attempts
+#
+# REGLES :
+# - Imperatif (add, fix, update - PAS added, fixed, updated)
+# - Pas de point final
+# - Aucune mention d outil IA

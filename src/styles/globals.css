@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-brand-night: #14283F;
+  --color-brand-teal: #176B66;
+  --color-accent: #D49A43;
+  --color-surface-base: #F5F7F8;
+  --color-surface-border: #DCE4EA;
+}

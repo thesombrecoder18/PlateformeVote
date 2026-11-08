@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+# Next.js
+.next/
+out/
+# Build
+dist/
+build/
+# Env - JAMAIS DE SECRETS ICI
+.env.local
+.env.*.local
+.env.production
+# Tests
+playwright-report/
+test-results/
+coverage/
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+# OS
+.DS_Store
+Thumbs.db
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+# Supabase
+.supabase/
+# Logs
+*.log
+npm-debug.log*
